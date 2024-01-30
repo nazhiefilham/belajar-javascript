@@ -33,4 +33,4 @@ var menuMakanan = {
   }
   
   
-  alert("Terima kasih");
+  alert("شُكْرًا كَثِيْرًا");
