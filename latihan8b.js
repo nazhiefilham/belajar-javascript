@@ -1,38 +1,36 @@
-// Daftar menu makanan beserta harganya
-const menu = {
-    nasiGoreng: 15000,
-    mieGoreng: 12000,
-    ayamGeprek: 18000,
-    sotoAyam: 16000,
-    bakso: 15000
+var menuMakanan = {
+    "Nasi Goreng": 25000,
+    "Mie Rebus": 20000,
+    "Ayam Bakar": 30000,
+    "Sate Kambing": 15000,
+    "Soto Madura": 22000
   };
   
-  // Menggunakan prompt untuk meminta pengguna memilih menu
-  let pesanan = prompt("Menu makanan yang tersedia:\n1. Nasi Goreng\n2. Mie Goreng\n3. Ayam Geprek\n4. Soto Ayam\n5. Bakso\n\nMasukkan nomor menu yang diinginkan:");
   
-  // Menggunakan pengkondisian untuk menentukan harga berdasarkan pilihan pengguna
-  let harga = 0;
-  if (pesanan === "1") {
-    harga = menu.nasiGoreng;
-  } else if (pesanan === "2") {
-    harga = menu.mieGoreng;
-  } else if (pesanan === "3") {
-    harga = menu.ayamGeprek;
-  } else if (pesanan === "4") {
-    harga = menu.sotoAyam;
-  } else if (pesanan === "5") {
-    harga = menu.bakso;
+  var menuText = "Daftar Menu Makanan:\n";
+  for (var menu in menuMakanan) {
+    menuText += menu + " - Rp" + menuMakanan[menu] + "\n";
+  }
+  alert(menuText);
+  
+  
+  var pilihanMenu = prompt("Masukkan menu yang ingin dipesan:");
+  var jumlahMakanan = parseInt(prompt("Masukkan jumlah " + pilihanMenu + " yang ingin dipesan:"));
+  
+  
+  if (menuMakanan.hasOwnProperty(pilihanMenu) && jumlahMakanan > 0) {
+  
+    var totalBiaya = menuMakanan[pilihanMenu] * jumlahMakanan;
+  
+  
+    alert(
+      "Pesanan Anda " + jumlahMakanan + " " + pilihanMenu +
+      " Total Yang Harus di Bayar Rp" + totalBiaya
+    );
   } else {
-    alert("Nomor menu tidak valid.");
-    // Keluar dari program jika nomor menu tidak valid
-    throw new Error("Terminating program.");
+  
+    alert("Pilihan Tidak ada di Menu");
   }
   
-  // Menggunakan prompt untuk meminta pengguna memasukkan jumlah makanan yang diinginkan
-  let jumlah = prompt("Masukkan jumlah makanan yang diinginkan:");
   
-  // Menghitung total biaya
-  let totalBiaya = harga * jumlah;
-  
-  // Menampilkan hasil kepada pengguna
-  alert("Detail Pesanan:\nMenu: " + pesanan + "\nJumlah: " + jumlah + "\nTotal Biaya: Rp " + totalBiaya);
+  alert("Terima kasih");
