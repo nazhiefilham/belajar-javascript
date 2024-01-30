@@ -1,4 +1,4 @@
-var user = prompt('Select One \n1.Semut \n2.Orang \n3.Gajah')
+var user = prompt('Pilih Suit \n1.Semut \n2.Orang \n3.Gajah')
 var computer = Math.random();
 
 if (computer < 0.34) {
