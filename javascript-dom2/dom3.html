@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" onclick="aksi('tampilkan', 'text'); return false">Tampilkan</a>
+    <a href="">Sembunyikan</a>
+
+    <p id="text" style="display: none;">ANTI YANG ANTI SAMA KITA</p>
+
+    <script>
+        function aksi(aksi, id){
+            if(aksi == "tampilkan"){
+                document.getElementById(id).style.display = "block";
+            }
+
+        }
+    </script>
+</body>
+</html>
